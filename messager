@@ -1,0 +1,13 @@
+from twilio.rest import Client 
+ 
+account_sid = 'AC7737efb91c7b3e3fdfc111f1a13bb8ea' 
+auth_token = '24bfca333f8764e31eed847f7f79c725' 
+client = Client(account_sid, auth_token) 
+ 
+message = client.messages.create( 
+                              from_='whatsapp:+14155238886',  
+                              body='Hello! This is an editable text message. You are free to change it and write whatever you like.',      
+                              to='whatsapp:+919717328119' 
+                          ) 
+ 
+print(message.sid)
